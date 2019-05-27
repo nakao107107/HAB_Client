@@ -85,7 +85,6 @@ export const state = () => ({
       }
 
       if(state.accounting.id){
-        console.log("aa")
         options = {
           method: 'PUT',
           url   : `/accountings/${state.accounting.id}`,

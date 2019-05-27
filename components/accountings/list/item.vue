@@ -37,7 +37,6 @@ export default {
 
     methods: {
         goEditPage(id){
-            console.log("aa")
             this.$router.push(`accountings/detail/${id}`)
         }
     }

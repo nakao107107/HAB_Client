@@ -43,16 +43,13 @@ export default {
 
       cognitoUser.authenticateUser(authenticationDetails, {
           onSuccess: function (result) {
-            console.log(result);
             let idToken = result.getIdToken().getJwtToken();
-            console.log(idToken);
           },
           onFailure: function (err) {
-              console.log(err);
+
           },
           newPasswordRequired: function (userAttributes, requiredAttributes) {
-            console.log(userAttributes);
-            console.log(requiredAttributes);
+
             cognitoUser.completeNewPasswordChallenge("Nakao107", {}, this);
           }
       });
@@ -67,7 +64,6 @@ export default {
       const userPool = new CognitoUserPool(poolData);
 
       const cognitoUser = userPool.getCurrentUser()
-      console.log(cognitoUser);
     },
 
     signOut(){

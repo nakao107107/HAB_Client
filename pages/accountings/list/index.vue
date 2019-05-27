@@ -2,7 +2,7 @@
   <section class="container">
     <div>
         <calender/>
-        <item></item>
+        <item v-if="accountings"></item>
         <nuxt-link to="/accountings/detail" class="register-new-button">収支の新規登録</nuxt-link>
     </div>
   </section>

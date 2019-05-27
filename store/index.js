@@ -26,7 +26,7 @@ export const actions = {
     var session = dispatch('auth/getCognitoSession')
 
     if (Object.keys(session).length == 0){
-        //return redirect('/auth/login')
+        return redirect('/auth/login')
     }
   }
 

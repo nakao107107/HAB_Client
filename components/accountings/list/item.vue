@@ -12,14 +12,12 @@
         <tbody>
             <itemRow
             v-for="(v,k) in accountings"
-            :key="`item-${v.id}`"
+            :key="v.id"
             :item="v"
             @click="goEditPage(v.id)"
             class="data-list"
             ></itemRow>
         </tbody>
-    
-        
     </table>
 </template>
 

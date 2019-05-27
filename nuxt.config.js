@@ -42,7 +42,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/resource.js'
+    '~plugins/resource.js',
+    '~/plugins/vue-notifications'
   ],
 
   /*
@@ -68,8 +69,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
-    }
+    transpile: ['vue-notifications']
   },
 
   resolve: {

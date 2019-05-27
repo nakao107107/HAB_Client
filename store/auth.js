@@ -63,7 +63,7 @@ export const actions = {
   */
   async login({ dispatch }, payload)
   {
-
+    console.log(payload)
     const authenticationDetails = new AuthenticationDetails({
       Username: payload.username,
       Password: payload.password
@@ -83,7 +83,11 @@ export const actions = {
 
       cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: res => resolve(res),
-        onFailure: err => reject(err)
+        onFailure: err => reject(err),
+        newPasswordRequired: function (userAttributes, requiredAttributes) {
+
+          cognitoUser.completeNewPasswordChallenge(payload.password, {}, this);
+        }
       })
 
     }).catch(() => {

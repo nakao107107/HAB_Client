@@ -3,16 +3,12 @@ import pkg from './package'
 const path    = require('path')
 
 require('dotenv').config();
+const { API_URL , COGNITO_USER_POOL_ID, COGNITO_CLIENT_ID } = process.env;
 
 global.fetch = require('node-fetch')
 
 export default {
   mode: 'universal',
-
-  env: {
-    COGNITO_USER_POOL_ID: process.env.COGNITO_USER_POOL_ID,
-    COGNITO_CLIENT_ID: process.env.COGNITO_CLIENT_ID
-  },
 
   /*
   ** Headers of the page
@@ -93,5 +89,11 @@ export default {
         icons: ['fas']
       }
     ]
+  },
+
+  env: {
+    API_URL,
+    COGNITO_USER_POOL_ID,
+    COGNITO_CLIENT_ID
   }
 }

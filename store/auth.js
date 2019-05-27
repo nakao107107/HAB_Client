@@ -32,8 +32,8 @@ export const actions = {
   async getCognitoSession({ dispatch })
   {
     const userPool = new CognitoUserPool({
-      UserPoolId: 'ap-northeast-1_i4n2ZAFTI',
-      ClientId  : '1jjjavjsmqtretgbsjidvbm94d'
+      UserPoolId: process.env.COGNITO_USER_POOL_ID,
+      ClientId  : process.env.COGNITO_CLIENT_ID
     });
 
     const cognitoUser = userPool.getCurrentUser()
@@ -70,8 +70,8 @@ export const actions = {
     });
 
     const userPool = new CognitoUserPool({
-      UserPoolId: 'ap-northeast-1_i4n2ZAFTI',
-      ClientId  : '1jjjavjsmqtretgbsjidvbm94d'
+      UserPoolId: process.env.COGNITO_USER_POOL_ID,
+      ClientId  : process.env.COGNITO_CLIENT_ID
     });
 
     const cognitoUser = new CognitoUser({

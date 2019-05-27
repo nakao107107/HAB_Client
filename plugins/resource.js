@@ -84,7 +84,7 @@ export default (ctx, inject) => {
   inject('resource', () => {
 
     const client = axios.create({
-      baseURL: 'http://localhost:3000',
+      baseURL: process.env.API_URL,
     })
     return new Resource(client, ctx)
 
